@@ -1,0 +1,15 @@
+{
+  "name": "errorbuddy-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --names \"backend,frontend\" --prefix-colors \"cyan,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix errorbuddy-backend run dev",
+    "dev:frontend": "npm --prefix errorbuddy-frontend run dev",
+    "install:all": "npm install && npm --prefix errorbuddy-backend install && npm --prefix errorbuddy-frontend install",
+    "build": "npm --prefix errorbuddy-frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

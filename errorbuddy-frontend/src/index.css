@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --neon-green: #00ff9d;
+  --neon-cyan:  #00f0ff;
+  --neon-red:   #ff3b5c;
+  --bg-dark:    #07070e;
+  --bg-card:    #0d0d1a;
+  --bg-glass:   rgba(13, 13, 26, 0.75);
+  --border-glass: rgba(0, 240, 255, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-dark);
+  color: #d4d4d8;
+  font-family: 'Inter', 'JetBrains Mono', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #00f0ff22; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00f0ff44; }
+
+/* ── Glass ─────────────────────────────────────────────────────────────── */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+}
+
+/* ── Neon utilities ────────────────────────────────────────────────────── */
+.glow-green { box-shadow: 0 0 24px #00ff9d33, 0 0 48px #00ff9d11; }
+.glow-cyan  { box-shadow: 0 0 24px #00f0ff22, 0 0 48px #00f0ff0d; }
+.text-neon-green { color: var(--neon-green); }
+.text-neon-cyan  { color: var(--neon-cyan); }
+.text-neon-red   { color: var(--neon-red); }
+
+/* ── Grid background ───────────────────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,240,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Pulse CTA ─────────────────────────────────────────────────────────── */
+@keyframes pulse-neon {
+  0%, 100% { box-shadow: 0 0 18px #00ff9d55, 0 0 36px #00ff9d22; }
+  50%       { box-shadow: 0 0 32px #00ff9d99, 0 0 64px #00ff9d33; }
+}
+.pulse-neon { animation: pulse-neon 2.4s ease-in-out infinite; }
+
+/* ── Active nav underline ──────────────────────────────────────────────── */
+.tab-underline { position: relative; }
+.tab-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 2px;
+  background: var(--neon-green);
+  border-radius: 2px;
+  box-shadow: 0 0 6px var(--neon-green);
+}
+
+/* ── Diff viewer ───────────────────────────────────────────────────────── */
+.diff-add { background: rgba(0,255,157,0.08); border-left: 3px solid #00ff9d; }
+.diff-del { background: rgba(255,59,92,0.08);  border-left: 3px solid #ff3b5c; }
+
+/* ── Select / option dark fix ──────────────────────────────────────────── */
+select option { background: #0d0d1a; color: #d4d4d8; }
+
+/* ── Spinning loader ───────────────────────────────────────────────────── */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.9s linear infinite; }
