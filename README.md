@@ -35,7 +35,11 @@ ErrorBuddy AI is an AI-powered debugging copilot designed to transform debugging
 
 ### Error History Dashboard and Live Logic Simulation
 
-![ErrorBuddy AI Dashboard Preview](https://placehold.co/1200x675/png?text=ErrorBuddy+AI+Dashboard+Preview)
+![ErrorBuddy AI Dashboard Preview](assests/1.jpeg)
+(assests/2.jpeg)
+(assests/3.jpeg)
+(assests/4.jpeg)
+(assests/5.jpeg)
 
 A clean snapshot of the history dashboard and the real-time simulation experience.
 
