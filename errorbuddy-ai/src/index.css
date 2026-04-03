@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-headline: "Space Grotesk", sans-serif;
+
+  --color-primary: #69f6b8;
+  --color-primary-dim: #58e7ab;
+  --color-primary-container: #06b77f;
+  --color-on-primary-container: #002919;
+  
+  --color-surface: #000000;
+  --color-surface-dim: #060e20;
+  --color-surface-bright: #111111;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #050505;
+  --color-surface-container: #080808;
+  --color-surface-container-high: #0a0a0a;
+  --color-surface-container-highest: #111111;
+
+  --color-on-surface: #f1f3f9;
+  --color-on-surface-variant: #a3aac4;
+  
+  --color-error: #ff5c5c;
+  --color-error-dim: #d7383b;
+  
+  --color-tertiary: #77e6ff;
+  --color-outline: #4d556b;
+  --color-outline-variant: #2d323f;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(105, 246, 184, 0.15);
+}
+
+.glass-panel {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(48px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-text {
+  text-shadow: 0 0 8px rgba(105, 246, 184, 0.4);
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.rotate-x-12 {
+  transform: rotateX(12deg);
+}
